@@ -1,0 +1,21 @@
+CSS - estilos OM- object mode /  CSSOM es un conjunto de apis y una representacion en forma de arbol de todos los CSS que un navegador a obtenido y leído
+
+<blockquote> :en bloque y semántico, se utiliza para identificar y resaltar citas o fragmentos de texto que proviene de otra fuente o autor 
+
+<span> : En linea y presentacional, este se utiliza para aplicar estilos a un texto, como cambiar el color de una palabra 
+
+<strong> : en linea y semamntico, sirve para dar importancia a un texto, colocándole por ejemplo el texto en negrita 
+
+<article> : bloque y semántico, sirve para contener una noticia, o un post de blog independiente
+
+<b> : en linea, presentacional, este sirve para resaltar un texto sin darle importancia semántica adicional 
+
+<time> : en linea y semántico marca fechas u horas, se usa por ejemplo en la publicación de un articulo 
+
+<ul> : en bloque y semántico, crea una lista desordenada de elementos
+
+<mark> : en linea y semántico, este resalta como un marcador fluorescente
+
+<code> : en linea y semántico, mostrar fragmentos de código en un texto
+
+<semantico> : Bloque y semántico agrupa contenidos relacionados dentro de una pagina

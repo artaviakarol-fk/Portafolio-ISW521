@@ -1,0 +1,45 @@
+<!-- 1. Imagen con picture -->
+<picture>
+    <source media="(max-width:600px)" srcset="portada-mobile.webp" type="image/webp">
+    <source media="(min-width:601px)" srcset="portada-desktop.webp" type="image/webp">
+    <img src="portada-desktop.jpg" alt="Portada del curso ISW-521" loading="lazy" width="1200" height="630">
+</picture>
+
+<!-- 2. Video con múltiples formatos -->
+<video controls poster="video-thumb.jpg" preload="metadata" width="640" height="360">
+    <source src="clase5.mp4" type="video/mp4">
+    <source src="clase5.webm" type="video/webm">
+    <p>Tu navegador no soporta video. <a href="clase5.mp4">Descargarlo</a></p>
+</video>
+
+<!-- 3. Audio de podcast -->
+<audio controls preload="none">
+    <source src="podcast-ep1.mp3" type="audio/mpeg">
+    <source src="podcast-ep1.ogg" type="audio/ogg">
+</audio>
+
+<!-- 4. Google Maps con sandbox seguro -->
+<iframe
+    src="https://maps.google.com/..."
+    title="Ubicación UTN San Carlos"
+    width="600"
+    height="400"
+    sandbox="allow-scripts allow-same-origin"
+    loading="lazy">
+</iframe>
+
+1. Atributos sandbox necesarios para Google Maps
+
+allow-scripts: permite ejecutar los scripts del mapa.
+allow-same-origin: permite cargar recursos correctamente desde Google.
+
+2. ¿Por qué hay 2 etiquetas <source> en el video?
+
+Para compatibilidad con más navegadores.
+Si uno no soporta MP4, puede usar WebM.
+
+3. ¿Qué pasa si se omite el alt?
+
+Menor accesibilidad para usuarios con lectores de pantalla.
+Si la imagen falla, no aparece texto descriptivo.
+Puede afectar el SEO.

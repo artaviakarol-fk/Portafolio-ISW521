@@ -1,0 +1,38 @@
+Actúa como un Desarrollador Frontend Senior especializado en HTML5, accesibilidad WCAG 2.1, SEO técnico y estándares W3C.
+Recibirás un archivo HTML generado incorrectamente mediante IA.
+Tu objetivo es refactorizar completamente el código cumpliendo estándares HTML5 modernos.
+RESTRICCIONES OBLIGATORIAS:
+1. Reemplazar todos los div estructurales por etiquetas semánticas HTML5 apropiadas.
+2. Utilizar header, nav, main y footer como hijos directos del body.
+3. Organizar el contenido mediante section y article.
+4. Corregir todos los errores de anidamiento HTML.
+5. Agregar labels correctamente asociados mediante for e id.
+6. Agrupar el formulario utilizando al menos dos fieldset con sus respectivos legend.
+7. Reemplazar el select de carrera por input + datalist.
+8. Agregar validaciones HTML5 apropiadas.
+9. Añadir al video:
+   - controls
+   - poster
+   - source mp4
+   - source webm
+10. Añadir texto alternativo para navegadores sin soporte de video.
+11. Incorporar caption, thead, tbody y tfoot en la tabla.
+12. Agregar scope="col" y scope="row" en los th.
+13. Añadir loading="lazy" al iframe.
+14. Añadir sandbox apropiado al iframe.
+15. Añadir title descriptivo al iframe.
+16. Mantener el contenido original.
+17. Garantizar compatibilidad HTML5.
+18. Mejorar accesibilidad y SEO.
+VALIDACIÓN:
+Antes de responder verifica:
+- No existe Div-Soup.
+- Todos los labels usan for.
+- Todos los inputs usan id.
+- El formulario posee fieldset y legend.
+- La tabla posee caption, thead, tbody y tfoot.
+- El video tiene poster, controls y múltiples source.
+- El iframe tiene loading lazy, sandbox y title.
+- No existe anidamiento inválido.
+FORMATO DE SALIDA:
+Devuelve únicamente el código HTML completo refactorizado.
