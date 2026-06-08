@@ -1,0 +1,337 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI', sans-serif;
+    color:#0b2e4f;
+
+    background-image:url("agua.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    display:flex;
+    align-items:center;
+
+    min-height:75px;
+    padding:0 30px;
+
+    background:rgba(77,168,218,0.75);
+
+    backdrop-filter:blur(4px);
+
+    color:#082f49;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.nav-logo{
+    flex:1;
+
+    font-size:1.4rem;
+    font-weight:bold;
+
+    color:#082f49;
+}
+
+.nav-links{
+    flex:3;
+
+    display:flex;
+    justify-content:center;
+
+    list-style:none;
+
+    gap:50px;
+}
+
+.nav-links a{
+    text-decoration:none;
+
+    color:#082f49;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#1565c0;
+}
+
+.btn-logout{
+    flex:1;
+
+    max-width:170px;
+
+    border:none;
+
+    background:#e3f7ff;
+
+    color:#082f49;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.btn-logout:hover{
+    transform:scale(1.05);
+
+    background:#ffffff;
+
+    cursor:pointer;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.dashboard-layout{
+    display:flex;
+
+    min-height:calc(100vh - 75px);
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+    flex:1;
+
+    background:rgba(255,255,255,.12);
+
+    padding:25px;
+
+    backdrop-filter:blur(2px);
+}
+
+.sidebar h3{
+    color:#082f49;
+
+    margin-bottom:20px;
+
+    font-size:1.3rem;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    margin-bottom:15px;
+
+    background:linear-gradient(
+        135deg,
+        #dff8ff,
+        #90caf9
+    );
+
+    color:#082f49;
+
+    font-weight:600;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.sidebar li:hover{
+    transform:translateX(6px);
+
+    box-shadow:0 8px 15px rgba(33,150,243,.2);
+
+    cursor:pointer;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content{
+    flex:3;
+
+    padding:25px;
+
+    background:rgba(255,255,255,.03);
+}
+
+.main-content h2{
+    margin-bottom:25px;
+
+    background:linear-gradient(
+        90deg,
+        #dff8ff,
+        #81d4fa
+    );
+
+    color:#082f49;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
+}
+
+/* =========================
+   SENSOR GRID
+========================= */
+
+.sensor-grid{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:16px;
+}
+
+/* =========================
+   TARJETAS
+========================= */
+
+.sensor-card{
+    flex-basis:calc(33.333% - 16px);
+
+    background:linear-gradient(
+        180deg,
+        #eafcff,
+        #bfefff
+    );
+
+    padding:20px;
+
+    border-radius:16px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+
+    transition:all .35s ease;
+}
+
+.sensor-card:hover{
+    transform:translateY(-10px);
+
+    box-shadow:0 18px 30px rgba(33,150,243,.35);
+
+    cursor:pointer;
+}
+
+.sensor-card h3{
+    background:linear-gradient(
+        90deg,
+        #b3ecff,
+        #81d4fa
+    );
+
+    color:#082f49;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    margin-bottom:15px;
+
+    font-weight:700;
+}
+
+.sensor-value{
+    font-size:2rem;
+
+    font-weight:bold;
+
+    color:#1565c0;
+
+    margin:15px 0;
+}
+
+/* =========================
+   ALERTAS
+========================= */
+
+.alert-panel{
+    flex:1;
+
+    background:rgba(255,255,255,.12);
+
+    padding:25px;
+
+    backdrop-filter:blur(2px);
+}
+
+.alert-panel h3{
+    color:#082f49;
+
+    margin-bottom:15px;
+
+    font-size:1.3rem;
+}
+
+.alert{
+    background:linear-gradient(
+        135deg,
+        #eafcff,
+        #90caf9
+    );
+
+    color:#082f49;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    margin-top:12px;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.alert:hover{
+    transform:translateX(6px);
+
+    box-shadow:0 8px 15px rgba(33,150,243,.2);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width:768px){
+
+    .dashboard-layout{
+        flex-direction:column;
+    }
+
+    .sidebar,
+    .alert-panel{
+        width:100%;
+        flex:none;
+    }
+
+    .sensor-card{
+        flex-basis:100%;
+    }
+
+    .nav-links{
+        gap:20px;
+    }
+}
