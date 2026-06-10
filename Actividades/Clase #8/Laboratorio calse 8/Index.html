@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Restauración — Toyota Hilux LN106 1994</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="dashboard-wrapper">
+
+        <!-- HEADER -->
+        <header class="dashboard-header">
+            <div class="header-brand">
+                <span class="header-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 32" width="48" height="24" fill="none">
+                        <!-- Caja/pickup bed -->
+                        <rect x="2" y="12" width="26" height="14" rx="2" fill="#1e88e5" />
+                        <!-- Cabina -->
+                        <rect x="28" y="8" width="22" height="18" rx="3" fill="#1565c0" />
+                        <!-- Parabrisas -->
+                        <rect x="36" y="10" width="11" height="9" rx="2" fill="#90caf9" opacity="0.8" />
+                        <!-- Defensa delantera -->
+                        <rect x="50" y="16" width="5" height="8" rx="1" fill="#1e88e5" />
+                        <!-- Parrilla -->
+                        <rect x="51" y="18" width="3" height="4" rx="0.5" fill="#0d47a1" />
+                        <!-- Faro delantero -->
+                        <rect x="52" y="17" width="2.5" height="2" rx="0.5" fill="#fff9c4" />
+                        <!-- Rueda trasera -->
+                        <circle cx="14" cy="27" r="5" fill="#1a1a2e" />
+                        <circle cx="14" cy="27" r="2.8" fill="#546e7a" />
+                        <circle cx="14" cy="27" r="1.2" fill="#90a4ae" />
+                        <!-- Rueda delantera -->
+                        <circle cx="42" cy="27" r="5" fill="#1a1a2e" />
+                        <circle cx="42" cy="27" r="2.8" fill="#546e7a" />
+                        <circle cx="42" cy="27" r="1.2" fill="#90a4ae" />
+                        <!-- Chasis -->
+                        <rect x="2" y="24" width="53" height="3" rx="1" fill="#0d47a1" />
+                    </svg>
+                </span>
+                <div>
+                    <h1 class="project-title">Toyota Hilux LN106 1994</h1>
+                    <p class="project-subtitle">Restauración Integral · Blanco Perla</p>
+                </div>
+            </div>
+
+            <div class="header-meta">
+                <span class="badge badge--active">En Progreso</span>
+                <p class="meta-date">Ingreso: 08 / 06 / 2026</p>
+                <p class="meta-tech">Técnico: Carlos Vargas</p>
+            </div>
+        </header>
+
+        <!-- HERO -->
+        <section class="vehicle-hero" aria-label="Galería del vehículo">
+
+            <div class="carousel">
+
+                <img src="assets/carroabierto.png" alt="Toyota Hilux LN106 en restauración"
+                    class="carousel-image active">
+
+                <img src="assets/carrodefrente.png" alt="Toyota Hilux LN106 vista frontal" class="carousel-image">
+
+                <img src="assets/carrodelaado.png" alt="Toyota Hilux LN106 vista lateral" class="carousel-image">
+
+            </div>
+
+            <div class="carousel-dots">
+                <span class="dot active-dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+            <div class="hero-progress">
+
+                <div class="progress-bar" role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100">
+
+                    <div class="progress-fill" style="--progress:67%"></div>
+
+                </div>
+
+                <p class="progress-label">
+                    Avance general: <strong>67%</strong>
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- SIDEBAR -->
+        <aside class="project-sidebar">
+
+            <div class="sidebar-card">
+
+                <h2 class="sidebar-card__title">
+                    Datos del Proyecto
+                </h2>
+
+                <dl class="project-data">
+
+                    <dt>Placa</dt>
+                    <dd>ABC-123</dd>
+
+                    <dt>VIN</dt>
+                    <dd>JT111LN106CR1994</dd>
+
+                    <dt>Motor</dt>
+                    <dd>2.8L Diesel 3L</dd>
+
+                    <dt>Transmisión</dt>
+                    <dd>Manual 5 velocidades</dd>
+
+                    <dt>Kilometraje</dt>
+                    <dd>324 500 km</dd>
+
+                    <dt>Presupuesto aprobado</dt>
+                    <dd>₡4 500 000</dd>
+
+                    <dt>Ejecutado</dt>
+                    <dd>₡3 100 000</dd>
+
+                </dl>
+
+            </div>
+
+            <div class="sidebar-card">
+
+                <h2 class="sidebar-card__title">
+                    Propietario
+                </h2>
+
+                <address class="owner-info">
+
+                    <p>José Rodríguez</p>
+                    <p>📞 8888-8888</p>
+                    <p>📧 jose@gmail.com</p>
+
+                </address>
+
+            </div>
+
+        </aside>
+
+        <!-- ESTADO MECÁNICO -->
+        <section class="status-section" aria-labelledby="status-heading">
+
+            <h2 id="status-heading" class="section-title">
+                Estado Mecánico
+            </h2>
+
+            <div class="status-grid status-grid-wide">
+
+                <article class="status-card status-card--done">
+
+                    <header class="status-card__header">
+                        <span class="status-icon">🔧</span>
+                        <h3 class="status-card__name">
+                            Motor 3L Diesel
+                        </h3>
+                    </header>
+
+                    <p class="status-card__state">
+                        Completado
+                    </p>
+
+                    <p class="status-card__detail">
+                        Cambio de empaques, ajuste de válvulas y mantenimiento general.
+                    </p>
+
+                    <meter class="status-meter" value="100" min="0" max="100">
+                    </meter>
+
+                </article>
+
+                <article class="status-card status-card--in-progress">
+
+                    <header class="status-card__header">
+                        <span class="status-icon">⚙️</span>
+                        <h3 class="status-card__name">
+                            Caja de Cambios
+                        </h3>
+                    </header>
+
+                    <p class="status-card__state">
+                        En Proceso
+                    </p>
+
+                    <p class="status-card__detail">
+                        Reemplazo de sincronizadores y revisión completa.
+                    </p>
+
+                    <meter class="status-meter" value="60" min="0" max="100">
+                    </meter>
+
+                </article>
+
+                <article class="status-card status-card--pending">
+
+                    <header class="status-card__header">
+                        <span class="status-icon">🛑</span>
+                        <h3 class="status-card__name">
+                            Sistema de Frenos
+                        </h3>
+                    </header>
+
+                    <p class="status-card__state">
+                        Pendiente
+                    </p>
+
+                    <p class="status-card__detail">
+                        Cambio de cilindros y rectificación de discos.
+                    </p>
+
+                    <meter class="status-meter" value="15" min="0" max="100">
+                    </meter>
+
+                </article>
+
+                <article class="status-card status-card--pending">
+
+                    <header class="status-card__header">
+                        <span class="status-icon">🛞</span>
+                        <h3 class="status-card__name">
+                            Suspensión Delantera
+                        </h3>
+                    </header>
+
+                    <p class="status-card__state">
+                        Pendiente
+                    </p>
+
+                    <p class="status-card__detail">
+                        Instalación de bujes y amortiguadores nuevos.
+                    </p>
+
+                    <meter class="status-meter" value="0" min="0" max="100">
+                    </meter>
+
+                </article>
+
+                <article class="status-card status-card--done">
+
+                    <header class="status-card__header">
+                        <span class="status-icon">🎨</span>
+                        <h3 class="status-card__name">
+                            Carrocería y Pintura
+                        </h3>
+                    </header>
+
+                    <p class="status-card__state">
+                        Completado
+                    </p>
+
+                    <p class="status-card__detail">
+                        Pintura completa en color blanco perla.
+                    </p>
+
+                    <meter class="status-meter" value="100" min="0" max="100">
+                    </meter>
+
+                </article>
+
+                <article class="status-card status-card--in-progress">
+
+                    <header class="status-card__header">
+                        <span class="status-icon">💡</span>
+                        <h3 class="status-card__name">
+                            Sistema Eléctrico
+                        </h3>
+                    </header>
+
+                    <p class="status-card__state">
+                        En Proceso
+                    </p>
+
+                    <p class="status-card__detail">
+                        Reparación de cableado principal y luces.
+                    </p>
+
+                    <meter class="status-meter" value="45" min="0" max="100">
+                    </meter>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- INVENTARIO -->
+        <section class="inventory-section" aria-labelledby="inventory-heading">
+
+            <h2 id="inventory-heading" class="section-title">
+                Inventario de Repuestos
+            </h2>
+
+            <ul class="parts-list parts-grid">
+
+                <li class="parts-item">
+                    <div class="part-info">
+                        <span class="part-icon">🔩</span>
+                        <div class="part-details">
+                            <p class="part-name">Kit de Empaques Motor 3L</p>
+                            <p class="part-sku">SKU: ENG-3L-001 · Toyota OEM</p>
+                        </div>
+                    </div>
+                    <span class="part-price">₡145 000</span>
+                    <div class="part-actions">
+                        <span class="badge badge--stock-ok">En Stock</span>
+                        <button class="btn-buy">Ordenar</button>
+                    </div>
+                </li>
+
+                <li class="parts-item">
+                    <div class="part-info">
+                        <span class="part-icon">⚙️</span>
+                        <div class="part-details">
+                            <p class="part-name">Sincronizadores Caja Manual</p>
+                            <p class="part-sku">SKU: TRN-106-002 · Aisin</p>
+                        </div>
+                    </div>
+                    <span class="part-price">₡98 000</span>
+                    <div class="part-actions">
+                        <span class="badge badge--stock-ok">En Stock</span>
+                        <button class="btn-buy">Ordenar</button>
+                    </div>
+                </li>
+
+                <li class="parts-item">
+                    <div class="part-info">
+                        <span class="part-icon">🛞</span>
+                        <div class="part-details">
+                            <p class="part-name">Amortiguadores Delanteros</p>
+                            <p class="part-sku">SKU: SUS-106-003 · KYB</p>
+                        </div>
+                    </div>
+                    <span class="part-price">₡85 000</span>
+                    <div class="part-actions">
+                        <span class="badge badge--stock-low">Pocas unidades</span>
+                        <button class="btn-buy">Ordenar</button>
+                    </div>
+                </li>
+
+                <li class="parts-item">
+                    <div class="part-info">
+                        <span class="part-icon">🛑</span>
+                        <div class="part-details">
+                            <p class="part-name">Cilindro Maestro de Frenos</p>
+                            <p class="part-sku">SKU: BRK-106-004 · Toyota OEM</p>
+                        </div>
+                    </div>
+                    <span class="part-price">₡125 000</span>
+                    <div class="part-actions">
+                        <span class="badge badge--out-of-stock">Agotado</span>
+                        <button class="btn-buy" disabled>Cotizar</button>
+                    </div>
+                </li>
+
+                <li class="parts-item">
+                    <div class="part-info">
+                        <span class="part-icon">💡</span>
+                        <div class="part-details">
+                            <p class="part-name">Juego de Faros Delanteros</p>
+                            <p class="part-sku">SKU: ELE-106-005 · Depo</p>
+                        </div>
+                    </div>
+                    <span class="part-price">₡65 000</span>
+                    <div class="part-actions">
+                        <span class="badge badge--stock-ok">En Stock</span>
+                        <button class="btn-buy">Ordenar</button>
+                    </div>
+                </li>
+
+            </ul>
+
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="dashboard-footer">
+
+            <div class="footer-brand">
+                <p class="footer-name">
+                    Taller Mecánico Vargas & Asociados
+                </p>
+                <p class="footer-address">
+                    San Carlos, Alajuela · Costa Rica
+                </p>
+            </div>
+
+            <div class="footer-contact">
+                <p>📞 2460-1234 · 8899-5678</p>
+                <p>📧 info@tallervargas.cr</p>
+            </div>
+
+            <div class="footer-legal">
+                <p class="footer-budget-status">
+                    Presupuesto N.° <strong>RV-2026-047</strong> — Aprobado y firmado
+                </p>
+
+                <p class="footer-disclaimer">
+                    Los precios indicados no incluyen IVA. Sujeto a disponibilidad de repuestos.
+                </p>
+            </div>
+
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

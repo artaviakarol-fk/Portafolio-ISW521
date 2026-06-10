@@ -1,0 +1,755 @@
+:root {
+    --primary: #6366f1;
+    --primary-light: #818cf8;
+    --primary-dark: #4338ca;
+
+    --accent: #f59e0b;
+    --accent-dark: #d97706;
+
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+
+    --bg: #0f0f1a;
+    --surface: #1a1a2e;
+    --surface2: #16213e;
+    --border: #2d2d5e;
+
+    --text: #e2e8f0;
+    --text-light: #94a3b8;
+
+    --radius: 16px;
+    --shadow: 0 8px 32px rgba(99, 102, 241, .18);
+
+    --space-xs: .5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+
+    --font: 'Segoe UI', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 20px;
+    background-image:
+        radial-gradient(ellipse at 20% 20%, rgba(99, 102, 241, .12) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 80%, rgba(245, 158, 11, .08) 0%, transparent 60%);
+}
+
+/* ==========================
+   GRID PRINCIPAL
+========================== */
+
+.dashboard-wrapper {
+    display: grid;
+    grid-template-columns: 280px 1fr 1fr;
+    grid-template-areas:
+        "header header header"
+        "sidebar hero hero"
+        "sidebar status status"
+        "sidebar inventory inventory"
+        "footer footer footer";
+    gap: 20px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.dashboard-header {
+    grid-area: header;
+}
+
+.project-sidebar {
+    grid-area: sidebar;
+}
+
+.vehicle-hero {
+    grid-area: hero;
+}
+
+.status-section {
+    grid-area: status;
+}
+
+.inventory-section {
+    grid-area: inventory;
+}
+
+.dashboard-footer {
+    grid-area: footer;
+}
+
+/* ==========================
+   TARJETAS BASE
+========================== */
+
+.dashboard-header,
+.sidebar-card,
+.vehicle-hero,
+.status-card,
+.inventory-section,
+.dashboard-footer {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.dashboard-header {
+    padding: var(--space-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    border: 1px solid #6366f1;
+    position: relative;
+    overflow: hidden;
+}
+
+.dashboard-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(99, 102, 241, .08),
+            transparent);
+    animation: headerSheen 6s ease-in-out infinite;
+}
+
+@keyframes headerSheen {
+
+    0%,
+    100% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(100%);
+    }
+}
+
+.header-brand {
+    position: relative;
+    overflow: hidden;
+    min-height: 90px;
+    padding-top: 35px;
+}
+
+.header-logo {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    animation: driveTruck 10s linear infinite;
+}
+
+.project-title {
+    background: linear-gradient(90deg, #818cf8, #f59e0b, #34d399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.project-subtitle {
+    color: var(--text-light);
+    font-size: .95rem;
+}
+
+@keyframes driveTruck {
+    0% {
+        left: -60px;
+    }
+
+    100% {
+        left: calc(100% + 20px);
+    }
+}
+
+.header-meta {
+    text-align: right;
+}
+
+.meta-date,
+.meta-tech {
+    color: var(--text-light);
+    font-size: .9rem;
+}
+
+/* ==========================
+   CARRUSEL
+========================== */
+
+.vehicle-hero {
+    padding: var(--space-md);
+    background: linear-gradient(135deg, #1a1a2e, #0f3460);
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.carousel-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-image.active {
+    opacity: 1;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--border);
+    transition: .3s;
+}
+
+.active-dot {
+    background: var(--primary-light);
+    transform: scale(1.3);
+    box-shadow: 0 0 8px var(--primary-light);
+}
+
+/* ==========================
+   PROGRESO
+========================== */
+
+.hero-progress {
+    margin-top: 1rem;
+}
+
+.progress-bar {
+    height: 18px;
+    background: rgba(255, 255, 255, .08);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: .5rem;
+    border: 1px solid var(--border);
+}
+
+.progress-fill {
+    width: var(--progress);
+    height: 100%;
+    background: linear-gradient(90deg, #6366f1, #818cf8, #f59e0b);
+    border-radius: 999px;
+}
+
+.progress-label {
+    color: var(--text-light);
+    font-size: .9rem;
+    margin-top: .4rem;
+}
+
+.progress-label strong {
+    color: var(--primary-light);
+}
+
+/* ==========================
+   SIDEBAR
+========================== */
+
+.project-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-card {
+    padding: 1.2rem;
+    background: linear-gradient(160deg, #1a1a2e, #16213e);
+    border: 1px solid var(--border);
+    transition: .3s;
+}
+
+.sidebar-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+    box-shadow: 0 8px 24px rgba(99, 102, 241, .25);
+}
+
+.sidebar-card__title {
+    color: var(--primary-light);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: .8rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid var(--border);
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+.project-data {
+    display: grid;
+    gap: .4rem;
+}
+
+.project-data dt {
+    color: var(--text-light);
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    margin-top: .3rem;
+}
+
+.project-data dd {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.owner-info p {
+    color: var(--text);
+    margin-bottom: .3rem;
+}
+
+/* ==========================
+   ESTADO MECÁNICO
+========================== */
+
+.status-section {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.section-title {
+    margin-bottom: 1rem;
+    color: var(--text);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.section-title::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 1.1em;
+    background: linear-gradient(180deg, var(--primary), var(--accent));
+    border-radius: 2px;
+}
+
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+}
+
+.status-card {
+    padding: 1.1rem;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border: 1px solid var(--border);
+    transition: .3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.status-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    opacity: .06;
+    transform: translate(20px, -20px);
+}
+
+.status-card--done::after {
+    background: var(--success);
+}
+
+.status-card--in-progress::after {
+    background: var(--warning);
+}
+
+.status-card--pending::after {
+    background: var(--danger);
+}
+
+.status-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(99, 102, 241, .2);
+    border-color: var(--primary);
+}
+
+.status-card--done {
+    border-left: 4px solid var(--success);
+}
+
+.status-card--in-progress {
+    border-left: 4px solid var(--warning);
+}
+
+.status-card--pending {
+    border-left: 4px solid var(--danger);
+}
+
+.status-card__header {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: .4rem;
+}
+
+.status-card__name {
+    color: var(--text);
+    font-size: .95rem;
+    font-weight: 700;
+}
+
+.status-card__state {
+    font-size: .8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    margin-bottom: .4rem;
+}
+
+.status-card--done .status-card__state {
+    color: var(--success);
+}
+
+.status-card--in-progress .status-card__state {
+    color: var(--warning);
+}
+
+.status-card--pending .status-card__state {
+    color: var(--danger);
+}
+
+.status-card__detail {
+    color: var(--text-light);
+    font-size: .85rem;
+    margin-bottom: .6rem;
+}
+
+.status-meter {
+    width: 100%;
+    height: 6px;
+    border-radius: 999px;
+    overflow: hidden;
+    appearance: none;
+    -webkit-appearance: none;
+    background: rgba(255, 255, 255, .08);
+    border: none;
+}
+
+.status-meter::-webkit-meter-bar {
+    background: rgba(255, 255, 255, .08);
+    border: none;
+    border-radius: 999px;
+}
+
+.status-card--done .status-meter::-webkit-meter-optimum-value {
+    background: var(--success);
+    border-radius: 999px;
+}
+
+.status-card--in-progress .status-meter::-webkit-meter-suboptimum-value {
+    background: var(--warning);
+    border-radius: 999px;
+}
+
+.status-card--pending .status-meter::-webkit-meter-even-less-good-value {
+    background: var(--danger);
+    border-radius: 999px;
+}
+
+/* ==========================
+   INVENTARIO
+========================== */
+
+.inventory-section {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+}
+
+.parts-list {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+}
+
+.parts-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    background: rgba(255, 255, 255, .04);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: .3s;
+}
+
+.parts-item:hover {
+    transform: translateY(-3px);
+    background: rgba(99, 102, 241, .08);
+    border-color: var(--primary);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, .15);
+}
+
+.part-info {
+    flex-grow: 1;
+    display: flex;
+    gap: .8rem;
+    align-items: center;
+}
+
+.part-icon {
+    font-size: 1.4rem;
+}
+
+.part-name {
+    color: var(--text);
+    font-weight: 600;
+    font-size: .95rem;
+}
+
+.part-sku {
+    color: var(--text-light);
+    font-size: .78rem;
+    margin-top: .1rem;
+}
+
+.part-price {
+    font-weight: 800;
+    color: var(--accent);
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.part-actions {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+/* ==========================
+   BADGES
+========================== */
+
+.badge {
+    padding: .35rem .75rem;
+    border-radius: 999px;
+    color: white;
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .03em;
+}
+
+.badge--active {
+    background: linear-gradient(90deg, #10b981, #059669);
+}
+
+.badge--stock-ok {
+    background: linear-gradient(90deg, #10b981, #059669);
+}
+
+.badge--stock-low {
+    background: linear-gradient(90deg, #f59e0b, #d97706);
+}
+
+.badge--out-of-stock {
+    background: linear-gradient(90deg, #ef4444, #dc2626);
+}
+
+/* ==========================
+   BOTONES
+========================== */
+
+.btn-buy {
+    border: none;
+    padding: .55rem 1rem;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: .85rem;
+    transition: .3s;
+    border: 1px solid transparent;
+}
+
+.btn-buy:hover {
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, .4);
+}
+
+.btn-buy:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+.dashboard-footer {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background: linear-gradient(135deg, #1a1a2e, #0f3460);
+    border: 1px solid var(--border);
+}
+
+.footer-name {
+    font-weight: 700;
+    color: var(--primary-light);
+}
+
+.footer-address,
+.footer-contact p,
+.footer-disclaimer {
+    color: var(--text-light);
+    font-size: .88rem;
+}
+
+.footer-budget-status {
+    color: var(--text);
+    font-size: .88rem;
+}
+
+/* ==========================
+   ANIMACIONES SCROLL
+========================== */
+
+.status-card,
+.sidebar-card,
+.parts-item {
+    opacity: 0;
+    transform: translateY(25px);
+    transition:
+        opacity .7s ease,
+        transform .7s ease,
+        border-color .3s,
+        box-shadow .3s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================
+   MODELO 3D
+========================== */
+
+#vehicle-3d-container {
+    width: 100%;
+    height: 340px;
+    background: #0a0a14;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 18px;
+    border: 1px solid var(--border);
+}
+
+#vehicle-3d-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+}
+
+.model-label {
+    position: absolute;
+    bottom: 10px;
+    left: 14px;
+    color: rgba(255, 255, 255, .4);
+    font-size: 11px;
+    font-family: monospace;
+    pointer-events: none;
+}
+
+.model-controls-hint {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    color: rgba(255, 255, 255, .35);
+    font-size: 10px;
+    font-family: monospace;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width: 900px) {
+    .dashboard-wrapper {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "hero"
+            "sidebar"
+            "status"
+            "inventory"
+            "footer";
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .parts-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .status-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 600px) {
+    .carousel {
+        height: 250px;
+    }
+}
