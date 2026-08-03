@@ -1,0 +1,1 @@
+{"version":3,"file":"Pato.js","sourceRoot":"","sources":["../src/Pato.ts"],"names":[],"mappings":";;;AAAA,+BAA4B;AAE5B,UAAkB,SAAQ,SAAG;IAC3B,MAAM,CAAS;IACf,YAAY,KAAa,EAAE,OAAe,EAAE,MAAc,EAAE,MAAc;QACxE,KAAK,CAAC,KAAK,EAAE,OAAO,EAAE,MAAM,CAAC,CAAC;QAC9B,IAAI,CAAC,MAAM,GAAG,MAAM,CAAC;IACvB,CAAC;CACF"}
